@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+      jdbc:
+        lob:
+          non_contextual_creation: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    web: DEBUG
+    org.hibernate.SQL: DEBUG
+
+server:
+  error:
+    include-message: always
+    include-stacktrace: on_param
